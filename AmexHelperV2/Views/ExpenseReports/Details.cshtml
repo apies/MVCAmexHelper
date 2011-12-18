@@ -1,0 +1,83 @@
+﻿@model AmexHelperV2.Models.ExpenseReport
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ExpenseReport</legend>
+
+    <div class="display-label">Month</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Month)
+    </div>
+
+    <div class="display-label">Date</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date)
+    </div>
+
+    <div class="display-label">Employee</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<table>
+    <tr>
+        <th>
+            Amount
+        </th>
+        <th>
+            Cardholder
+        </th>
+        <th>
+            DateofPurchase
+        </th>
+        <th>
+            Approved
+        </th>
+        <th>
+            Billable
+        </th>
+        <th>
+            ApprovedToPush
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in ViewBag.Charges) {
+    <tr>
+        <td>
+         @item.Amount
+        </td>
+        <td>
+         @item.Cardholder
+        </td>
+        <td>
+            @item.DateofPurchase
+        </td>
+        <td>
+            @item.Approved
+        </td>
+        <td>
+            @item.Billable
+        </td>
+        <td>
+            @item.ApprovedToPush
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

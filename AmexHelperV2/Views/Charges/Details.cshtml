@@ -1,0 +1,45 @@
+﻿@model AmexHelperV2.Models.Charge
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Charge</legend>
+
+    <div class="display-label">Amount</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Amount)
+    </div>
+
+    <div class="display-label">Cardholder</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cardholder)
+    </div>
+
+    <div class="display-label">DateofPurchase</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateofPurchase)
+    </div>
+
+    <div class="display-label">Approved</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Approved)
+    </div>
+
+    <div class="display-label">Billable</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Billable)
+    </div>
+
+    <div class="display-label">ApprovedToPush</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApprovedToPush)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

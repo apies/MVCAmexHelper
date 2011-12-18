@@ -1,0 +1,79 @@
+﻿@model IEnumerable<AmexHelperV2.Models.Charge>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Amount
+        </th>
+        <th>
+            Cardholder
+        </th>
+        <th>
+            DateofPurchase
+        </th>
+        <th>
+            Approved
+        </th>
+        <th>
+            Billable
+        </th>
+        <th>
+            ApprovedToPush
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cardholder)
+        </td>
+        <td>
+           @Html.DisplayFor(modelItem => item.DateofPurchase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Approved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Billable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApprovedToPush)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+@using (Html.BeginForm("Index", "Charges", FormMethod.Post, 
+
+       new { enctype = "multipart/form-data" }))
+{ 
+   <fieldset>
+      <div class="editor-field">
+            <input type =file name = "file">
+      </div>
+    
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
