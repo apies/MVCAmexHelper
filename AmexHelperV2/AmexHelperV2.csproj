@@ -153,6 +153,7 @@
     <Content Include="Views\ExpenseReports\Create.cshtml" />
     <Content Include="Views\ExpenseReports\Edit.cshtml" />
     <Content Include="Views\ExpenseReports\Delete.cshtml" />
+    <Content Include="Views\ExpenseReports\MyReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -174,7 +175,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>4698</DevelopmentServerPort>
+          <DevelopmentServerPort>6541</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

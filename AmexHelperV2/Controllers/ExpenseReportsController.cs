@@ -106,5 +106,33 @@ namespace AmexHelperV2.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+
+        public ActionResult MyReport()
+        {
+
+            String uName = User.Identity.Name;
+
+            int index = uName.IndexOf("\\", 0);
+
+            ViewBag.Message = User.Identity.Name.Substring(index + 1);
+
+
+
+
+            ExpenseReport expensereport = db.ExpenseReports.Where(c => c.Employee == User.Identity.Name.Substring(index + 1)).FirstOrDefault();
+
+            ViewBag.Charges = expensereport.Charges.ToList();
+            return View(expensereport);
+
+
+        }
+
+
+
+
+
+
+
     }
 }
