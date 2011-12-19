@@ -1,8 +1,8 @@
 ﻿
+<h1 id = "jtable">BLOB</h1>
 
-
-<table>
-    <tr>
+<table id = "jtable" >
+    <tr id = "jtable">
         <th>
             Amount
         </th>
@@ -25,9 +25,9 @@
     </tr>
 
 
-
+<tbody>
 @foreach (var item in ViewBag.Charges) {
-    <tr>
+    <tr id = "jtable">
         <td>
          @item.Amount
         </td>
@@ -53,5 +53,5 @@
         </td>
     </tr>
 }
-
+</tbody>
 </table>
