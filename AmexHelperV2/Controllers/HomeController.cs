@@ -22,6 +22,12 @@ namespace AmexHelperV2.Controllers
 
             ViewBag.Message = User.Identity.Name.Substring(index + 1 ) ;
 
+           string[] viewBlob = System.Web.Security.Roles.GetRolesForUser();
+
+           //string[] usersBlob = System.Web.Security.Roles.FindUsersInRole("BUILTIN\\Administrators","Administrator");
+           ViewBag.BoolBlob = User.IsInRole("BUILTIN\\Administrators");
+            
+            ViewBag.Blob = viewBlob;
 
 
 

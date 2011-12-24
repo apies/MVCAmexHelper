@@ -12,5 +12,6 @@ namespace AmexHelperV2.Models
         public virtual DateTime Date { get; set; }
         public virtual List<Charge> Charges { get; set; }
         public virtual string Employee { get; set; }
+        public virtual decimal TotalAmount { get; set; }
     }
 }

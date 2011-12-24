@@ -55,27 +55,13 @@ namespace AmexHelperV2.Controllers
             IEnumerable<IGrouping<String, Charge>> groupedcharges = from charge in db.Charges
                                 group charge by charge.Cardholder;
              
-          ;
-
-
-          //  List<Charge> listExpenseSheets= new List<Charge>;
-            
-          //  listExpenseSheets = expenseSheets.ToList();
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
             foreach (var report in groupedcharges.ToList())
             {
+
+                Decimal totalAmount = (from charge in report
+                                       select charge.Amount).Sum();
                 ExpenseReport eReport = new ExpenseReport();
                 eReport.Employee = report.Key;
                 eReport.Month = "February";
@@ -83,6 +69,7 @@ namespace AmexHelperV2.Controllers
                 var eCharges = from charge in report
                                   select charge;
                 eReport.Charges = eCharges.ToList();
+                eReport.TotalAmount = totalAmount;
 
                 db.ExpenseReports.Add(eReport);
                 db.SaveChanges();
