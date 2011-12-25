@@ -8,6 +8,17 @@ $(document).ready(function () {
     $('#main #jtable tbody tr').click(function () {
         $(this).toggleClass('hoverHighlight');
     });
+
+    $('#reportsListAll > div').hide();
+
+    $('#reportsListAll h3').click(function () {
+        $(this).next().animate(
+	    { 'height': 'toggle' }, 'slow', 'easeOutBounce'
+    );
+    });
+
+
+
 });
 
 

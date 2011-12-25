@@ -6,45 +6,55 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
+<div id = "reportsListAll">
+@foreach (var item in Model)
+{      <h3>@item.Employee @item.TotalAmount</h3>
+     <div>
+  
+    <table>
     <tr>
         <th>
-            Month
+            Amount
         </th>
         <th>
-            Date
+            Cardholder
         </th>
         <th>
-            Employee
+            DateofPurchase
         </th>
         <th>
-          Total Amount
+            Approved
+        </th>
+        <th>
+            Billable
         </th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var charge in item.Charges)
+{
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Month)
+         @charge.Amount
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Date)
+         @charge.Cardholder
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Employee)
-        </td>
-          <td>
-            @Html.DisplayFor(modelItem => item.TotalAmount)
+            @charge.DateofPurchase
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @charge.Approved
         </td>
+        <td>
+            @charge.Billable
+        </td>
+   
     </tr>
 }
 
 </table>
+ 
+ </div>   
+}
+
+</div>

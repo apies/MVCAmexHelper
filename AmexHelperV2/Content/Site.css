@@ -1,10 +1,31 @@
 ﻿
 tr.hoverHighlight {
   background-color: #00FF00; 
-
- 
   
 }
+
+#reportsListAll {
+  margin-bottom: 10px;
+}
+
+#reportsListAll h3
+{
+  margin:0;
+  padding:5px 0 5px 10px;
+  background-color:#94C5EB;
+  border-bottom:1px solid #fff;
+  color: #00314F;
+  font-weight:normal;
+}
+
+#reportsListAll div
+{
+  
+  background-color: #F4F4EE;
+  border-bottom:1px solid #fff;
+  position: relative;
+}
+
 
 
 /*----------------------------------------------------------
