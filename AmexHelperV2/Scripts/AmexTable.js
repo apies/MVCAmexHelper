@@ -5,11 +5,17 @@
 //$(function () { alert($('#jtable tbody tr').length); });
 
 $(document).ready(function () {
+    
+    // this function highlights rows in table by clicking
     $('#main #jtable tbody tr').click(function () {
         $(this).toggleClass('hoverHighlight');
     });
 
+    
+    //these two functions are important for the expense report admin list
     $('#reportsListAll > div').hide();
+
+    $('#reportsListAll h3').next().hide();
 
     $('#reportsListAll h3').click(function () {
         $(this).next().animate(
@@ -17,6 +23,13 @@ $(document).ready(function () {
     );
     });
 
+
+
+   // $('#reportsListAll > div').hide();
+
+
+
+  
 
 
 });

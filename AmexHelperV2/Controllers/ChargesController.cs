@@ -40,13 +40,41 @@ namespace AmexHelperV2.Controllers
 
             while (csvReader.Read())
             {
-                Charge charge = new Charge();
-                charge.Cardholder = csvReader.GetField("Cardholder");
-                charge.Amount = Convert.ToDecimal(csvReader.GetField("Amount"));
-                charge.DateofPurchase = csvReader.GetField<DateTime>("Date Of Purchase");
+                if (csvReader.GetField("CARDMEMBER_NAME") != null && csvReader.GetField("CARDMEMBER_NAME") != "")
+                {
 
-                db.Charges.Add(charge);
-                db.SaveChanges();
+                    Charge charge = new Charge();
+
+                    //test upload fields
+                    //charge.Cardholder = csvReader.GetField("Cardholder");
+                    //charge.Amount = Convert.ToDecimal(csvReader.GetField("Amount"));
+                    //charge.DateofPurchase = csvReader.GetField<DateTime>("Date Of Purchase");
+
+                    //true upload fields and logic
+                    Decimal rawAmount = csvReader.GetField<Decimal>("BILLING_AMOUNT");
+                    int dbcr = csvReader.GetField<int>("DB\\CR_INDICATOR");
+                    if (dbcr == 3)
+                    { rawAmount = 0; }
+                    else if (dbcr == 2)
+                    { rawAmount = -rawAmount; }
+                    else if (dbcr == 4)
+                    { rawAmount = 0; }
+
+                    charge.Amount = rawAmount;
+                    charge.DateofPurchase = (csvReader.GetField<DateTime>("PROCESS_DATE"));
+                    charge.Description = csvReader.GetField("CHARGE_DESCRIPTION_LINE1");
+                    charge.ReferenceInfo = csvReader.GetField("CHARGE_DESCRIPTION_LINE2");
+                    charge.AirTraveler = csvReader.GetField("AIR_PASSENGER_NAME");
+                    charge.AirRoute = csvReader.GetField("AIR_ROUTING");
+                    charge.Cardholder = csvReader.GetField("CARDMEMBER_NAME");
+
+
+
+
+
+                    db.Charges.Add(charge);
+                    db.SaveChanges();
+                }
 
 
 

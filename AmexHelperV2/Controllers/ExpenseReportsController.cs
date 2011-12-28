@@ -80,9 +80,24 @@ namespace AmexHelperV2.Controllers
             return View(expensereport);
         }
 
+        [HttpPost]
+        public ActionResult EnterCodes(FormCollection form)
+        {
+
+            int[] idIntArray = new int[form.AllKeys.Length];
+            for (int i = 0; i < form.AllKeys.Length; i++)
+            {
+                Charge charge = db.Charges.Find(Int32.Parse(form.GetValues("Id")[i]));
+                charge.Purpose = form.GetValues("Purpose")[i];
+                db.SaveChanges();
+                
+            }
+            return RedirectToAction("Index");
+        }
+
         //
         // GET: /ExpenseReports/Delete/5
- 
+
         public ActionResult Delete(int id)
         {
             ExpenseReport expensereport = db.ExpenseReports.Find(id);

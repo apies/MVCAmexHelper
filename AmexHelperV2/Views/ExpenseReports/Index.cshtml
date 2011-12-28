@@ -7,8 +7,15 @@
 <h2>Index</h2>
 
 <div id = "reportsListAll">
+
 @foreach (var item in Model)
-{      <h3>@item.Employee @item.TotalAmount</h3>
+{
+   using(Html.BeginForm("EnterCodes", "ExpenseReports", FormMethod.Post))
+    {
+        
+  
+    
+    <h3>@item.Employee @item.TotalAmount</h3>
      <div>
   
     <table>
@@ -18,6 +25,12 @@
         </th>
         <th>
             Cardholder
+        </th>
+        <th>
+           Description
+        </th>
+        <th>
+           Purpose
         </th>
         <th>
             DateofPurchase
@@ -33,11 +46,21 @@
 @foreach (var charge in item.Charges)
 {
     <tr>
+        
         <td>
+        @Html.Hidden("Id", charge.Id)
          @charge.Amount
         </td>
         <td>
          @charge.Cardholder
+        </td>
+         <td>
+         @charge.Description
+        </td>
+         <td>
+       
+         @Html.TextBox("Purpose", charge.Purpose)
+    
         </td>
         <td>
             @charge.DateofPurchase
@@ -53,8 +76,11 @@
 }
 
 </table>
- 
- </div>   
+ <p>
+  <input type="submit" value="Save" />
+</p>
+ </div>
+    }
 }
 
 </div>

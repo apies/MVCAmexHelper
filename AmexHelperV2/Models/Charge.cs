@@ -13,6 +13,8 @@ namespace AmexHelperV2.Models
 
         public virtual string Cardholder { get; set; }
 
+        public string Description { get; set; }
+
         public virtual string Purpose { get; set; }
 
         public virtual DateTime DateofPurchase { get; set; }
@@ -22,6 +24,12 @@ namespace AmexHelperV2.Models
         public virtual bool Billable { get; set; }
 
         public virtual bool ApprovedToPush { get; set; }
+
+        public string ReferenceInfo { get; set; }
+
+        public string AirTraveler { get; set; }
+
+        public string AirRoute { get; set; }
 
         public ExpenseReport Report { get; set; }
 

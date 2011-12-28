@@ -18,3 +18,13 @@ C:\gpdev\MVCAmexHelper\AmexHelperV2\bin\EntityFramework.xml
 C:\gpdev\MVCAmexHelper\AmexHelperV2\obj\Debug\ResolveAssemblyReference.cache
 C:\gpdev\MVCAmexHelper\AmexHelperV2\obj\Debug\AmexHelperV2.dll
 C:\gpdev\MVCAmexHelper\AmexHelperV2\obj\Debug\AmexHelperV2.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\MVCAmexHelper\AmexHelperV2\bin\AmexHelperV2.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\MVCAmexHelper\AmexHelperV2\bin\AmexHelperV2.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\MVCAmexHelper\AmexHelperV2\bin\CsvHelper.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\MVCAmexHelper\AmexHelperV2\bin\EntityFramework.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\MVCAmexHelper\AmexHelperV2\bin\CsvHelper.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\MVCAmexHelper\AmexHelperV2\bin\CsvHelper.xml
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\MVCAmexHelper\AmexHelperV2\bin\EntityFramework.xml
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\MVCAmexHelper\AmexHelperV2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\MVCAmexHelper\AmexHelperV2\obj\Debug\AmexHelperV2.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\MVCAmexHelper\AmexHelperV2\obj\Debug\AmexHelperV2.pdb
