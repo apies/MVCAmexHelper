@@ -69,12 +69,15 @@
     <Compile Include="Controllers\ChargesController.cs" />
     <Compile Include="Controllers\ExpenseReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SupervisorsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AmexHelperDB.cs" />
     <Compile Include="Models\Charge.cs" />
     <Compile Include="Models\ExpenseReport.cs" />
+    <Compile Include="Models\GPContext.cs" />
+    <Compile Include="Models\Supervisor.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -156,6 +159,11 @@
     <Content Include="Views\ExpenseReports\Edit.cshtml" />
     <Content Include="Views\ExpenseReports\Delete.cshtml" />
     <Content Include="Views\ExpenseReports\MyReport.cshtml" />
+    <None Include="Views\Supervisors\Create.cshtml" />
+    <None Include="Views\Supervisors\Delete.cshtml" />
+    <None Include="Views\Supervisors\Details.cshtml" />
+    <None Include="Views\Supervisors\Edit.cshtml" />
+    <None Include="Views\Supervisors\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
