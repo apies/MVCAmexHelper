@@ -122,11 +122,17 @@ namespace AmexHelperV2.Controllers
                                          where s.EmployeeId == manager.EmployeeID
                                          select s).FirstOrDefault();
 
+           // ViewBag.Supervisor = supervisor.EmployeeId.ToString();
+            
+            //the next step after the underlings que is to que the expense reports now that we have the underlings
+            
             IEnumerable<Employee> underlings = from e in managerList
                                                where e.SupervisorCode ==  "ACCT3" // supervisor.SupervisorCode
                                                select e;
 
             ViewBag.Underlings = underlings;
+
+
 
             return View(manager);
         }
