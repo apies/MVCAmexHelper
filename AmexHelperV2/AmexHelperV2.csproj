@@ -41,6 +41,8 @@
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Dynamics.GP.eConnect, Version=10.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Dynamics.GP.eConnect.Serialization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -75,6 +77,7 @@
     </Compile>
     <Compile Include="Models\AmexHelperDB.cs" />
     <Compile Include="Models\Charge.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\ExpenseReport.cs" />
     <Compile Include="Models\GPContext.cs" />
     <Compile Include="Models\Supervisor.cs" />
@@ -159,6 +162,7 @@
     <Content Include="Views\ExpenseReports\Edit.cshtml" />
     <Content Include="Views\ExpenseReports\Delete.cshtml" />
     <Content Include="Views\ExpenseReports\MyReport.cshtml" />
+    <None Include="Views\ExpenseReports\ManagerApproval.cshtml" />
     <None Include="Views\Supervisors\Create.cshtml" />
     <None Include="Views\Supervisors\Delete.cshtml" />
     <None Include="Views\Supervisors\Details.cshtml" />

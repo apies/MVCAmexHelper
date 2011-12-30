@@ -6,12 +6,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AmexHelperV2.Models;
+using System.Xml.Linq;
+
 
 namespace AmexHelperV2.Controllers
 { 
     public class ExpenseReportsController : Controller
     {
         private AmexHelperDB db = new AmexHelperDB();
+        private GPContext gpdb = new GPContext();
 
         //
         // GET: /ExpenseReports/
@@ -93,6 +96,39 @@ namespace AmexHelperV2.Controllers
                 
             }
             return RedirectToAction("Index");
+        }
+
+        public ActionResult ManagerApproval()
+        {
+            //setting up ad authentication by parsing out Domain Name
+            String uName = User.Identity.Name;
+
+            int index = uName.IndexOf("\\",0);
+
+            string adName = User.Identity.Name.Substring(index + 1 ) ;
+            
+            
+            
+            Employee employee = new Employee();
+            XElement xEmployee = employee.GPQue();
+            IEnumerable<Employee> managerList = employee.MakeModel(xEmployee);
+
+            Employee manager = (from e in managerList
+                               where e.AdName == adName
+                               select e).FirstOrDefault();
+
+
+            Supervisor supervisor = (from s in gpdb.Supervisors
+                                         where s.EmployeeId == manager.EmployeeID
+                                         select s).FirstOrDefault();
+
+            IEnumerable<Employee> underlings = from e in managerList
+                                               where e.SupervisorCode ==  "ACCT3" // supervisor.SupervisorCode
+                                               select e;
+
+            ViewBag.Underlings = underlings;
+
+            return View(manager);
         }
 
         //
